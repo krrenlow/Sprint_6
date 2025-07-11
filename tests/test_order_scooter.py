@@ -5,7 +5,17 @@ import data
 
 
 class TestOrderScooter:
-    @allure.step("Тест заказа самоката через верхнюю кнопку Заказать")
+    @allure.title("Проверка успешного заказа самоката через верхнюю кнопку 'Заказать'")
+    @allure.description("""
+    Тест проверяет полный процесс заказа самоката:
+    1. Нажатие на верхнюю кнопку 'Заказать'
+    2. Заполнение первой формы заказа (личные данные)
+    3. Выбор станции метро
+    4. Переход ко второй форме заказа
+    5. Заполнение деталей аренды (дата, срок, цвет самоката, комментарий)
+    6. Подтверждение заказа
+    7. Проверка номера заказа
+    """)
     def test_success_ful_order_first(self, driver):
         order_scooter = OrderScooter(driver)
         order_scooter.click_order_button_top()
@@ -20,7 +30,17 @@ class TestOrderScooter:
         order_scooter.click_button_view_status()
         order_scooter.check_number_order()
 
-    @allure.step("Тест заказа самоката через нижнюю кнопку Заказать")
+    @allure.title("Проверка успешного заказа самоката через нижнюю кнопку 'Заказать'")
+    @allure.description("""
+        Тест проверяет полный процесс заказа самоката:
+        1. Нажатие на нижнюю кнопку 'Заказать'
+        2. Заполнение первой формы заказа (личные данные)
+        3. Выбор станции метро
+        4. Переход ко второй форме заказа
+        5. Заполнение деталей аренды (дата, срок, цвет самоката, комментарий)
+        6. Подтверждение заказа
+        7. Проверка номера заказа
+        """)
     def test_success_ful_order_second(self, driver):
         order_scooter = OrderScooter(driver)
         order_scooter.click_order_button_lower()
